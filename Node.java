@@ -1,5 +1,6 @@
 public class Node <E> {
     public int Data;
+    public String Name;
     protected Node head;
     protected Node next;
     protected Node last;
@@ -7,6 +8,7 @@ public class Node <E> {
 
     public Node(int valData) {
         this.Data = valData;
+        //this.Name = valName;
         this.head = null;
         this.next = null;
         this.last = null;

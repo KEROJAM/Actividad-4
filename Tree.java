@@ -53,7 +53,7 @@ public class Tree {
         }
     }
 
-    public int findMind(){
+    public int findMin(){
         return findMinRec(root);
     }
 
@@ -83,7 +83,7 @@ public class Tree {
         return findMaxRec(root.next);
     }
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        Tree tree = new Tree();
 
         // Insert some nodes
         tree.insert(50);
