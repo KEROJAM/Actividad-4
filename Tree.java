@@ -1,12 +1,23 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Tree {
     Node root;
+    private PrintWriter logWriter;
 
-    public Tree (){
+    public Tree (String logFile) throws IOException {
         root = null;
+        logWriter = new PrintWriter(new FileWriter(logFile, true));
+    }
+    private void log(String message) {
+        logWriter.println(message);
+        logWriter.flush();
     }
 
     public void insert(int Data) {
         root = insertRec(root, Data);
+        log = ("Insertando valor: " + Data);
     }
     private Node insertRec(Node root, int Data){
         if (root == null){
@@ -15,9 +26,9 @@ public class Tree {
         }
 
         if (Data < root.Data){
-            root.last = insertRec(root.last, Data);
+            root.Left = insertRec(root.Left, Data);
         } else if (Data > root.Data){
-            root.next = insertRec(root.next, Data);
+            root.Right = insertRec(root.Right, Data);
         }
         return root;
     }
@@ -27,9 +38,9 @@ public class Tree {
 
      private void inorderRec(Node root){
         if (root != null ){
-            inorderRec(root.last);
+            inorderRec(root.Left);
             System.out.print(root.Data + " ");
-            inorderRec(root.next);
+            inorderRec(root.Right);
         }
      }
 
@@ -47,9 +58,9 @@ public class Tree {
         }
 
         if (data < root.Data){
-            return searchRec(root.last, data);
+            return searchRec(root.Left, data);
         } else {
-            return searchRec(root.next, data);
+            return searchRec(root.Right, data);
         }
     }
 
@@ -62,11 +73,11 @@ public class Tree {
             throw new IllegalStateException("Tree is empty");
         }
 
-        if (root.last == null){
+        if (root.Left == null){
             return root.Data;
         }
 
-        return findMinRec(root.last);
+        return findMinRec(root.Left);
     }
 
     public int findMax(){
@@ -77,37 +88,16 @@ public class Tree {
         if (root == null)
             throw new IllegalStateException("Tree is empty");
 
-        if (root.next == null)
+        if (root.Right == null)
             return root.Data;
 
-        return findMaxRec(root.next);
+        return findMaxRec(root.Right);
     }
-    public static void main(String[] args) {
-        Tree tree = new Tree();
 
-        // Insert some nodes
-        tree.insert(50);
-        tree.insert(30);
-        tree.insert(20);
-        tree.insert(40);
-        tree.insert(70);
-        tree.insert(60);
-        tree.insert(80);
-
-        // Print inorder traversal of the tree
-        System.out.println("Inorder traversal:");
-        tree.inorder();
-        // Output: 20 30 40 50 60 70 80
-
-        // Search for a key
-        int searchKey = 40;
-        if (tree.search(searchKey))
-            System.out.println("\nKey " + searchKey + " found in the tree.");
-        else
-            System.out.println("\nKey " + searchKey + " not found in the tree.");
-
-        // Find minimum and maximum values
-        System.out.println("Minimum value in the tree: " + tree.findMin());
-        System.out.println("Maximum value in the tree: " + tree.findMax());
+    // Cierra el Log
+    public void closeLog(){
+        if (logWriter != null){
+            logWriter.close();
+        }
     }
 }
