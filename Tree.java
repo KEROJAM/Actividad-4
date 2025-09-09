@@ -1,6 +1,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Tree {
     Node root;
@@ -11,13 +13,13 @@ public class Tree {
         logWriter = new PrintWriter(new FileWriter(logFile, true));
     }
     private void log(String message) {
-        logWriter.println(message);
+        logWriter.println(message + " " + LocalDate.now() + " " + LocalTime.now());
         logWriter.flush();
     }
 
     public void insert(int Data) {
         root = insertRec(root, Data);
-        log = ("Insertando valor: " + Data);
+        log("Insertando valor: " + Data);
     }
     private Node insertRec(Node root, int Data){
         if (root == null){
@@ -45,7 +47,9 @@ public class Tree {
      }
 
      public boolean search(int data){
-        return searchRec(root, data);
+        boolean found = searchRec(root, data);
+         log("Búsqueda de " + data + ": " + (found ? "ENCONTRADO" : "NO ENCONTRADO"));
+         return found;
      }
 
     private boolean searchRec(Node root, int data){

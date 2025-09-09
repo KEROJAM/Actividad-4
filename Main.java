@@ -1,8 +1,8 @@
 import java.io.IOException;
-
+import java.util.Date;
 public class Main {
     public static void main(String[] args) throws IOException {
-        Tree tree = new Tree("");
+        Tree tree = new Tree("logs.log");
 
         // Insert some nodes
         tree.insert(50);
