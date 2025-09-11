@@ -1,48 +1,52 @@
-Insertando valor: 50
-Insertando valor: 30
-Insertando valor: 20
-Insertando valor: 40
-Insertando valor: 70
-Insertando valor: 60
-Insertando valor: 80
-Búsqueda de 40: ENCONTRADO
-Insertando valor: 502025-09-09
-Insertando valor: 302025-09-09
-Insertando valor: 202025-09-09
-Insertando valor: 402025-09-09
-Insertando valor: 702025-09-09
-Insertando valor: 602025-09-09
-Insertando valor: 802025-09-09
-Búsqueda de 40: ENCONTRADO2025-09-09
-Insertando valor: 502025-09-09
-Insertando valor: 302025-09-09
-Insertando valor: 202025-09-09
-Insertando valor: 402025-09-09
-Insertando valor: 702025-09-09
-Insertando valor: 602025-09-09
-Insertando valor: 802025-09-09
-Búsqueda de 40: ENCONTRADO2025-09-09
-Insertando valor: 502025-09-09
-Insertando valor: 302025-09-09
-Insertando valor: 202025-09-09
-Insertando valor: 402025-09-09
-Insertando valor: 702025-09-09
-Insertando valor: 602025-09-09
-Insertando valor: 802025-09-09
-Búsqueda de 40: ENCONTRADO2025-09-09
-Insertando valor: 50 2025-09-09
-Insertando valor: 30 2025-09-09
-Insertando valor: 20 2025-09-09
-Insertando valor: 40 2025-09-09
-Insertando valor: 70 2025-09-09
-Insertando valor: 60 2025-09-09
-Insertando valor: 80 2025-09-09
-Búsqueda de 40: ENCONTRADO 2025-09-09
-Insertando valor: 50 2025-09-09 15:18:08.621205042
-Insertando valor: 30 2025-09-09 15:18:08.626221538
-Insertando valor: 20 2025-09-09 15:18:08.626266514
-Insertando valor: 40 2025-09-09 15:18:08.626293961
-Insertando valor: 70 2025-09-09 15:18:08.626318195
-Insertando valor: 60 2025-09-09 15:18:08.626343005
-Insertando valor: 80 2025-09-09 15:18:08.626366643
-Búsqueda de 40: ENCONTRADO 2025-09-09 15:18:08.628862778
+Iniciando carga de empleados desde list.csv 2025-09-10 19:23:37.284366134
+Empleado cargado: María González López (ID: 1) 2025-09-10 19:23:37.290883795
+Empleado cargado: Juan Rodríguez Martínez (ID: 2) 2025-09-10 19:23:37.296495462
+Empleado cargado: Ana Fernández García (ID: 3) 2025-09-10 19:23:37.296540857
+Empleado cargado: Carlos López Hernández (ID: 4) 2025-09-10 19:23:37.296577164
+Empleado cargado: Isabel Martín Ruiz (ID: 5) 2025-09-10 19:23:37.296613410
+Empleado cargado: Pedro Sánchez Jiménez (ID: 6) 2025-09-10 19:23:37.296646909
+Empleado cargado: Laura Torres Morales (ID: 7) 2025-09-10 19:23:37.296680804
+Empleado cargado: Miguel Ramírez Castillo (ID: 8) 2025-09-10 19:23:37.296714397
+Empleado cargado: Carmen Flores Ortega (ID: 9) 2025-09-10 19:23:37.296750195
+Empleado cargado: Roberto Herrera Delgado (ID: 10) 2025-09-10 19:23:37.296786734
+Empleado cargado: Patricia Moreno Ruiz (ID: 11) 2025-09-10 19:23:37.296831051
+Empleado cargado: Francisco Jiménez Vega (ID: 12) 2025-09-10 19:23:37.296866753
+Empleado cargado: Teresa Romero Soto (ID: 13) 2025-09-10 19:23:37.296903346
+Empleado cargado: Andrés Gil Medina (ID: 14) 2025-09-10 19:23:37.296936490
+Empleado cargado: Mónica Vargas Peña (ID: 15) 2025-09-10 19:23:37.297015792
+Empleado cargado: Diego Castro Navarro (ID: 16) 2025-09-10 19:23:37.297069452
+Empleado cargado: Lucía Ramos Silva (ID: 17) 2025-09-10 19:23:37.297104966
+Empleado cargado: Alejandro Mendoza Cruz (ID: 18) 2025-09-10 19:23:37.297144013
+Empleado cargado: Cristina Peña Aguirre (ID: 19) 2025-09-10 19:23:37.297187632
+Empleado cargado: Javier Ortiz Moreno (ID: 20) 2025-09-10 19:23:37.297229905
+Empleado cargado: Beatriz Campos Reyes (ID: 21) 2025-09-10 19:23:37.297269252
+Empleado cargado: Ricardo Vázquez Luna (ID: 22) 2025-09-10 19:23:37.297300779
+Empleado cargado: Silvia Guerrero Téllez (ID: 23) 2025-09-10 19:23:37.297336222
+Empleado cargado: Ernesto Cabrera Díaz (ID: 24) 2025-09-10 19:23:37.297379067
+Empleado cargado: Valentina Rojas Herrera (ID: 25) 2025-09-10 19:23:37.297445776
+Carga completada. Total empleados: 25 2025-09-10 19:23:37.297498724
+Insertando valor: ID: 1, Nombre: María González López 2025-09-10 19:23:37.303341963
+Insertando valor: ID: 2, Nombre: Juan Rodríguez Martínez 2025-09-10 19:23:37.303501070
+Insertando valor: ID: 3, Nombre: Ana Fernández García 2025-09-10 19:23:37.303531298
+Insertando valor: ID: 4, Nombre: Carlos López Hernández 2025-09-10 19:23:37.303558215
+Insertando valor: ID: 5, Nombre: Isabel Martín Ruiz 2025-09-10 19:23:37.303583870
+Insertando valor: ID: 6, Nombre: Pedro Sánchez Jiménez 2025-09-10 19:23:37.303646704
+Insertando valor: ID: 7, Nombre: Laura Torres Morales 2025-09-10 19:23:37.303688299
+Insertando valor: ID: 8, Nombre: Miguel Ramírez Castillo 2025-09-10 19:23:37.303728691
+Insertando valor: ID: 9, Nombre: Carmen Flores Ortega 2025-09-10 19:23:37.303777853
+Insertando valor: ID: 10, Nombre: Roberto Herrera Delgado 2025-09-10 19:23:37.303812086
+Insertando valor: ID: 11, Nombre: Patricia Moreno Ruiz 2025-09-10 19:23:37.303839240
+Insertando valor: ID: 12, Nombre: Francisco Jiménez Vega 2025-09-10 19:23:37.303875375
+Insertando valor: ID: 13, Nombre: Teresa Romero Soto 2025-09-10 19:23:37.303913441
+Insertando valor: ID: 14, Nombre: Andrés Gil Medina 2025-09-10 19:23:37.303943524
+Insertando valor: ID: 15, Nombre: Mónica Vargas Peña 2025-09-10 19:23:37.303971055
+Insertando valor: ID: 16, Nombre: Diego Castro Navarro 2025-09-10 19:23:37.303999704
+Insertando valor: ID: 17, Nombre: Lucía Ramos Silva 2025-09-10 19:23:37.304025209
+Insertando valor: ID: 18, Nombre: Alejandro Mendoza Cruz 2025-09-10 19:23:37.304052665
+Insertando valor: ID: 19, Nombre: Cristina Peña Aguirre 2025-09-10 19:23:37.304077425
+Insertando valor: ID: 20, Nombre: Javier Ortiz Moreno 2025-09-10 19:23:37.304104958
+Insertando valor: ID: 21, Nombre: Beatriz Campos Reyes 2025-09-10 19:23:37.304130307
+Insertando valor: ID: 22, Nombre: Ricardo Vázquez Luna 2025-09-10 19:23:37.304154420
+Insertando valor: ID: 23, Nombre: Silvia Guerrero Téllez 2025-09-10 19:23:37.304187903
+Insertando valor: ID: 24, Nombre: Ernesto Cabrera Díaz 2025-09-10 19:23:37.304233102
+Insertando valor: ID: 25, Nombre: Valentina Rojas Herrera 2025-09-10 19:23:37.304281002

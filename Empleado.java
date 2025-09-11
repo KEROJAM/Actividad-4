@@ -1,12 +1,13 @@
+
 public class Empleado {
     String Nombre;
-    String ID;
-    public Empleado(String valName, String valID) {
+    int ID;
+    public Empleado(String valName, int valID) {
         this.Nombre = valName;
         this.ID = valID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 
@@ -14,11 +15,17 @@ public class Empleado {
         Nombre = nombre;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
     public String getNombre() {
         return Nombre;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + ID + ", Nombre: " + Nombre;
+    }
+
 }

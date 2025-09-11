@@ -1,12 +1,10 @@
 public class Node <E> {
-    public int Data;
-    public String Name;
+    public Empleado Data;
     protected Node Left;
     protected Node Right;
 
-    public Node(int valData) {
+    public Node(Empleado valData) {
         this.Data = valData;
-        //this.Name = valName;
         this.Left = this.Right = null;
     }
 
@@ -14,7 +12,7 @@ public class Node <E> {
      * Establece/actualiza el dato almacenado en el nodo.
      * @param valData nuevo dato
      */
-    public void setData(int valData) {
+    public void setData(Empleado valData) {
         Data = valData;
     }
 
@@ -38,7 +36,7 @@ public class Node <E> {
      * Obtiene el dato almacenado en el nodo.
      * @return dato del nodo
      */
-    public int getData() {
+    public Empleado getData() {
             return Data;
     }
 
