@@ -9,7 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase principal que contiene el sistema de gestión de empleados.
+ * Proporciona una interfaz de menú para interactuar con el árbol binario de búsqueda.
+ */
 public class Main {
+    /**
+     * Método estático para leer empleados desde un archivo CSV.
+     * @param archivo ruta del archivo CSV a leer
+     * @param logFile archivo donde registrar las operaciones de carga
+     * @return lista de empleados leídos del archivo
+     */
     private static List<Empleado> leerEmpleadosDesdeCSV(String archivo, String logFile) {
         List<Empleado> empleados = new ArrayList<>();
 
@@ -51,6 +61,12 @@ public class Main {
     private static List<Empleado> empleadosList;
     private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Método principal que inicializa el sistema y muestra el menú de opciones.
+     * Carga los empleados desde CSV, crea el árbol binario y gestiona la interfaz de usuario.
+     * @param args argumentos de línea de comandos (no utilizados)
+     * @throws IOException si hay problemas al leer archivos o crear logs
+     */
     public static void main(String[] args) throws IOException {
         // Inicializar el sistema
         System.out.println("=== SISTEMA DE GESTIÓN DE EMPLEADOS ===");
@@ -75,6 +91,10 @@ public class Main {
         scanner.close();
     }
     
+    /**
+     * Muestra el menú principal del sistema y gestiona la navegación entre opciones.
+     * Controla el flujo principal de la aplicación hasta que el usuario decide salir.
+     */
     private static void mostrarMenuPrincipal() {
         int opcion;
         do {
@@ -90,7 +110,8 @@ public class Main {
             System.out.println("7.  Comparar eficiencia: Árbol vs Búsqueda Secuencial");
             System.out.println("8.  Mostrar empleados ordenados (Inorder)");
             System.out.println("9.  Visualizar estructura del árbol");
-            System.out.println("10. Mostrar árbol por niveles");
+            System.out.println("10. Mostrar árbol por niveles (BFS)");
+            System.out.println("11. Mostrar árbol por niveles (Recursivo)");
             System.out.println("0.  Salir");
             System.out.println("=".repeat(50));
             System.out.print("Seleccione una opción: ");
@@ -128,6 +149,9 @@ public class Main {
                 case 10:
                     mostrarArbolPorNiveles();
                     break;
+                case 11:
+                    mostrarArbolPorNivelesRecursivo();
+                    break;
                 case 0:
                     System.out.println("¡Gracias por usar el sistema!");
                     break;
@@ -137,6 +161,10 @@ public class Main {
         } while (opcion != 0);
     }
     
+    /**
+     * Muestra la lista completa de empleados registrados en el sistema.
+     * Presenta los empleados en el orden en que fueron cargados desde el CSV.
+     */
     private static void mostrarTodosLosEmpleados() {
         System.out.println("\n LISTA COMPLETA DE EMPLEADOS");
         System.out.println("-".repeat(40));
@@ -152,6 +180,10 @@ public class Main {
         System.out.println("Total: " + empleadosList.size() + " empleados");
     }
     
+    /**
+     * Permite al usuario buscar un empleado específico por su ID.
+     * Utiliza el árbol binario para búsqueda eficiente y mide el tiempo de ejecución.
+     */
     private static void buscarPorID() {
         System.out.print("\n🔍 Ingrese el ID del empleado a buscar: ");
         int id = leerEntero();
@@ -169,6 +201,10 @@ public class Main {
         System.out.println("⏱️ Tiempo de búsqueda: " + (endTime - startTime) + " nanosegundos");
     }
     
+    /**
+     * Permite al usuario buscar un empleado por su nombre.
+     * La búsqueda es case-insensitive y mide el tiempo de ejecución.
+     */
     private static void buscarPorNombre() {
         System.out.print("\n Ingrese el nombre del empleado a buscar: ");
         scanner.nextLine(); // Limpiar buffer
@@ -187,6 +223,10 @@ public class Main {
         System.out.println(" Tiempo de búsqueda: " + (endTime - startTime) + " nanosegundos");
     }
     
+    /**
+     * Permite agregar un nuevo empleado al sistema.
+     * Genera automáticamente el siguiente ID disponible y actualiza tanto el árbol como la lista.
+     */
     private static void agregarEmpleado() {
         System.out.println("\n AGREGAR NUEVO EMPLEADO");
         
@@ -211,6 +251,11 @@ public class Main {
         System.out.println(" Empleado: " + nuevoEmpleado);
     }
     
+    /**
+     * Genera automáticamente el siguiente ID disponible para un nuevo empleado.
+     * Encuentra el ID más alto existente y le suma 1.
+     * @return el siguiente ID disponible
+     */
     private static int generarSiguienteID() {
         if (empleadosList.isEmpty()) {
             return 1;
@@ -225,6 +270,10 @@ public class Main {
         return maxID + 1;
     }
     
+    /**
+     * Permite eliminar un empleado del sistema por su ID.
+     * Solicita confirmación antes de proceder con la eliminación.
+     */
     private static void eliminarEmpleado() {
         System.out.print("\n Ingrese el ID del empleado a eliminar: ");
         int id = leerEntero();
@@ -253,6 +302,10 @@ public class Main {
         }
     }
     
+    /**
+     * Muestra estadísticas del sistema incluyendo total de empleados,
+     * empleado con menor y mayor ID, y altura estimada del árbol.
+     */
     private static void mostrarEstadisticas() {
         System.out.println("\n📊 ESTADÍSTICAS DEL SISTEMA");
         System.out.println("-".repeat(40));
@@ -270,6 +323,10 @@ public class Main {
         System.out.println("Altura estimada del árbol: ~" + Math.ceil(Math.log(tree.countNodes()) / Math.log(2)));
     }
     
+    /**
+     * Compara la eficiencia entre búsqueda con árbol binario vs búsqueda secuencial.
+     * Realiza ambas búsquedas con el mismo empleado y muestra métricas de rendimiento.
+     */
     private static void compararEficiencia() {
         System.out.println("\n⚡ COMPARACIÓN DE EFICIENCIA");
         System.out.println("=".repeat(50));
@@ -322,6 +379,13 @@ public class Main {
         }
     }
     
+    /**
+     * Implementa búsqueda secuencial en la lista de empleados.
+     * Utilizada para comparar eficiencia con el árbol binario.
+     * @param lista lista de empleados donde buscar
+     * @param id ID del empleado a buscar
+     * @return empleado encontrado o null si no existe
+     */
     private static Empleado busquedaSecuencial(List<Empleado> lista, int id) {
         for (Empleado emp : lista) {
             if (emp.getID() == id) {
@@ -331,6 +395,10 @@ public class Main {
         return null;
     }
     
+    /**
+     * Muestra los empleados ordenados por ID utilizando recorrido inorder del árbol.
+     * Demuestra cómo el BST mantiene automáticamente el orden de los datos.
+     */
     private static void mostrarEmpleadosOrdenados() {
         System.out.println("\n EMPLEADOS ORDENADOS POR ID (Recorrido Inorder)");
         System.out.println("-".repeat(50));
@@ -345,6 +413,10 @@ public class Main {
         System.out.println("gracias a las propiedades del Árbol Binario de Búsqueda");
     }
     
+    /**
+     * Muestra la estructura visual del árbol binario de búsqueda.
+     * Presenta el árbol en formato gráfico para entender su organización.
+     */
     private static void visualizarEstructuraArbol() {
         System.out.println("\n ESTRUCTURA VISUAL DEL ÁRBOL BINARIO");
         System.out.println("=".repeat(50));
@@ -360,8 +432,12 @@ public class Main {
         System.out.println("• Esta estructura permite búsquedas eficientes O(log n)");
     }
     
+    /**
+     * Muestra el árbol organizado por niveles de profundidad usando BFS.
+     * Útil para entender la altura y distribución de los nodos.
+     */
     private static void mostrarArbolPorNiveles() {
-        System.out.println("\nÁRBOL POR NIVELES");
+        System.out.println("\n🌳 ÁRBOL POR NIVELES (Breadth-First Search)");
         System.out.println("=".repeat(50));
         if (tree.countNodes() == 0) {
             System.out.println("No hay empleados en el árbol");
@@ -373,8 +449,33 @@ public class Main {
         System.out.println("• Nivel 0: Raíz del árbol");
         System.out.println("• Cada nivel hacia abajo duplica el número máximo de nodos");
         System.out.println("• La altura del árbol determina la eficiencia de búsqueda");
+        System.out.println("• Este método usa BFS para mostrar niveles completos");
     }
     
+    /**
+     * Muestra el árbol organizado por niveles usando método recursivo.
+     * Alternativa al método BFS para comparar implementaciones.
+     */
+    private static void mostrarArbolPorNivelesRecursivo() {
+        System.out.println("\n🌳 ÁRBOL POR NIVELES (Método Recursivo)");
+        System.out.println("=".repeat(50));
+        if (tree.countNodes() == 0) {
+            System.out.println("No hay empleados en el árbol");
+            return;
+        }
+        
+        tree.mostrarArbolPorNivelesRecursivo();
+        System.out.println("\nInformación:");
+        System.out.println("• Este método usa recursión para mostrar cada nivel");
+        System.out.println("• Útil para entender la estructura recursiva del árbol");
+        System.out.println("• Compara con el método BFS (opción 10) para ver diferencias");
+    }
+    
+    /**
+     * Método utilitario para leer un entero del usuario con validación.
+     * Maneja errores de entrada y solicita reingresar datos inválidos.
+     * @return entero válido ingresado por el usuario
+     */
     private static int leerEntero() {
         while (true) {
             try {
